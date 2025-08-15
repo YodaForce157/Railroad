@@ -50,6 +50,10 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+      - name: Install fakeroot for jpackage
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot dpkg
       - run: chmod +x gradlew
       - run: ./gradlew jpackageInstaller jpackageImage
       - name: Upload Linux artifacts
