@@ -73,6 +73,11 @@ jobs:
 #        with:
 #          java-version: '21'
 #          distribution: 'temurin'
+#      - name: Add IP to cloudflare whitelist
+#        uses: xiaotianxt/bypass-cloudflare-for-github-actions@v1.1.1
+#        with:
+#          cf_zone_id: ${{ secrets.CF_ZONE_ID }}
+#          cf_api_token: ${{ secrets.CF_API_TOKEN }}
 #      - run: gradlew.bat jpackageInstaller jpackageImage
 #      - name: Upload Windows artifacts
 #        uses: actions/upload-artifact@v4
@@ -91,6 +96,11 @@ jobs:
 #        with:
 #          java-version: '21'
 #          distribution: 'temurin'
+#      - name: Add IP to cloudflare whitelist
+#        uses: xiaotianxt/bypass-cloudflare-for-github-actions@v1.1.1
+#        with:
+#          cf_zone_id: ${{ secrets.CF_ZONE_ID }}
+#          cf_api_token: ${{ secrets.CF_API_TOKEN }}
 #      - run: chmod +x gradlew
 #      - run: ./gradlew jpackageInstaller jpackageImage
 #      - name: Upload Mac artifacts

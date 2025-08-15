@@ -1,3 +1,14 @@
+<!-- Release 1.2.11 -->
+# Changelog
+
+## Fixes
+None, everything is broken.
+
+## New Contributors
+None, everyone gave up and left :(
+
+**Full Changelog**: DELETED ALL FILES
+
 <!-- Release 1.2.10 -->
 # Changelog
 
