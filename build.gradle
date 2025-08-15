@@ -160,11 +160,29 @@ tasks.register('jpackageInstaller', Exec) {
         outputDir.deleteDir()
     }
 
+    def imageName;
+    def imageType;
+    //TODO
+    // Allow for a .exe, and .app non installer version, .rpm too
+    // Add correct railroad icon (for mac installer atleast)
+    if (System.getProperty('os.name').toLowerCase().contains('windows')) {
+        imageName = 'Railroad'
+        imageType = 'msi'
+    } else if (System.getProperty('os.name').toLowerCase().contains('linux')){
+        imageName = 'Railroad'
+        imageType = 'deb'
+    } else if (System.getProperty('os.name').toLowerCase().contains('mac')) {
+        imageName = 'Railroad.app'
+        imageType = 'dmg'
+    } else {
+        throw new GradleException("Unsupported OS for jpackage: ${System.getProperty('os.name')}")
+    }
+
     commandLine 'jpackage',
-            '--app-image', "${outputDir}/Railroad",
+            '--app-image', "${outputDir}/${imageName}",
             '--dest', outputDir,
-            '--name', 'Railroad',
-            '--app-version', '1.0.0',
+            '--name', "Railroad",
+            '--app-version', version,
             '--vendor', 'Railroad Team',
             '--description', 'Railroad Application'
 

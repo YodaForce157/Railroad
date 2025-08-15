@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: linux-build
-          path: build/jpackage/**
+          path: build/jpackage/*.deb
 
 #  build-windows:
 #    runs-on: windows-latest
@@ -78,7 +78,7 @@ jobs:
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: windows-build
-#          path: build/jpackage/**
+#          path: build/jpackage/*.msi
 #
 #  build-mac:
 #    runs-on: macos-latest
@@ -97,7 +97,7 @@ jobs:
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: mac-build
-#          path: build/jpackage/**
+#          path: build/jpackage/*.dmg
 
   release:
     runs-on: self-hosted
@@ -126,6 +126,8 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fromTag: ${{ github.event.before }}
+          toTag: ${{ github.ref }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
@@ -134,8 +136,8 @@ jobs:
           name: Release ${{ github.ref_name }}
           body: ${{ steps.changelog.outputs.changelog }}
           files: |
-            dist/linux/**
-#            dist/windows/**
-#            dist/mac/**
+            dist/linux/*.deb
+#            dist/windows/*.msi
+#            dist/mac/*.dmg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
