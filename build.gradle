@@ -4,6 +4,7 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.1.0'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
     id 'checkstyle'
+    id 'org.ec4j.editorconfig' version '0.1.0'
 }
 
 group 'dev.railroadide'
@@ -38,7 +39,7 @@ javafx {
 }
 
 checkstyle {
-    toolVersion = '10.0'
+    toolVersion = '10.20.2'
     configFile = file('checkstyle.xml')
 }
 
