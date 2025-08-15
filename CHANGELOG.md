@@ -1,3 +1,14 @@
+<!-- Release 1.2.12 -->
+# Changelog
+oopsie
+## Fixes
+- None, I am too lazy to fix anything.
+
+## New Contributors
+- @LazyCoder made their first contribution!!
+
+**Full Changelog**: NONE LAZY CODER IS TOO LAZY TO DO ANYTHING
+---
 <!-- Release 1.2.11 -->
 # Changelog
 
@@ -8,7 +19,7 @@ None, everything is broken.
 None, everyone gave up and left :(
 
 **Full Changelog**: DELETED ALL FILES
-
+---
 <!-- Release 1.2.10 -->
 # Changelog
 
