@@ -1,14 +1,10 @@
-# Release 1.2.9
+<!-- Release 1.2.10 -->
+# Changelog
 
-## Removed
-- Removed the presence of unwanted spirits.
+## Fixes
+Fix thing being broken, by @YodaForce157 in https://github.com/Railroad-Team/Railroad/pull/50
 
-##### TLDR
-You are lazy if you're reading this.
+## New Contributors
+- @YodaForce157 made their first contribution!!
 
-# Release 1.2.8
-
-## Features
-- This is a test
-- This is also, a test
-- Added changelog parsing to [publish.yml](.github/workflows/publish.yml)
+**Full Changelog**: https://github.com/Railroad-Team/Railroad/compare/v1.2.9...v1.2.10

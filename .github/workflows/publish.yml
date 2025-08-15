@@ -124,8 +124,10 @@ jobs:
       - name: Generate Changelog
         id: changelog
         run: |
-          CHANGELOG=$(awk '/^# Release [0-9]+\.[0-9]+\.[0-9]+/{p=1; print; next} p&&/^# Release [0-9]+\.[0-9]+\.[0-9]+|^___/{p=0} p' CHANGELOG.md)
+          # Grab everything up to the first '---' line
+          CHANGELOG=$(awk 'BEGIN{p=1} /^---/{p=0} p' CHANGELOG.md)
           
+          # Generate a unique delimiter to avoid any output issues
           delimiter="$(openssl rand -hex 8)"
           {
             echo "changelog<<${delimiter}"
