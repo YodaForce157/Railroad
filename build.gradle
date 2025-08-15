@@ -182,6 +182,7 @@ tasks.register('jpackageInstaller', Exec) {
             '--app-image', "${outputDir}/${imageName}",
             '--dest', outputDir,
             '--name', "Railroad",
+            '--type', imageType,
             '--app-version', version,
             '--vendor', 'Railroad Team',
             '--description', 'Railroad Application'
